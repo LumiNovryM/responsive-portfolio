@@ -1,0 +1,95 @@
+/* === Fonts : Satisfy === */
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+/* === Fonts : Poppins === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+/* === Reset === */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #E9DBDB;
+}
+
+/* === Mobile Breakpoin === */
+
+/* === Desktop Breakpoint === */
+@media (max-width: 1366px){
+    /* Navbar Start */
+    header{
+        /* background: red; */
+        height: 50px;
+        display: flex;
+        justify-content: center;
+    }
+    header nav{
+        /* background-color: blue; */
+        display: flex;
+        width: 95%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header nav h1{
+        font-family: 'Satisfy';
+        cursor: pointer;
+    }
+
+    header nav ul{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        display: flex;
+        list-style-type: none;
+        /* background-color: aqua; */
+        width: 500px;
+        justify-content: space-around;
+        align-items: center;
+    }
+    header nav ul li{
+        cursor: pointer;
+    }
+    /* Navbar End */
+
+    /* Jumbotron Start */
+    .jumbotron{
+        display: flex;
+        justify-content: center;
+    }
+    .jumbotron .desc{
+        /* background-color: red; */
+        width: 30%;
+        display: flex;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 2px;
+        position: relative;
+    }
+    .jumbotron .desc h3{
+        font-size: 30px;
+    }
+    .jumbotron .desc h1{
+        font-size: 45px;
+    }
+    .jumbotron .desc button{
+        outline: none;
+        border: none;
+        padding: 12px 50px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 5px;
+        background-color: #2C2C2C;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        color: #E9DBDB;
+        transition: all .3s ease;
+        position: absolute;
+    }
+    .jumbotron .desc button:hover{
+        background-color: #E9DBDB;
+        color: #2C2C2C;
+        border: 2px solid #2C2C2C;
+    }
+    /* Jumbotron End */
+}
