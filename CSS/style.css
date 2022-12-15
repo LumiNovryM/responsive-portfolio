@@ -11,85 +11,202 @@
 
 body{
     background-color: #E9DBDB;
+    overflow-x: hidden;
 }
 
-/* === Mobile Breakpoin === */
+/* #== Navbar ==# */
+nav{
+    display: flex;
+    background-color: #dacbcb;
+    justify-content: space-between;
+    padding: 20px;
+    color: #2C2C2C;
+    height: 20px;
+    align-items: center;
+    z-index: 5;
+}
 
-/* === Desktop Breakpoint === */
-@media (max-width: 1366px){
-    /* Navbar Start */
-    header{
-        /* background: red; */
-        height: 50px;
-        display: flex;
-        justify-content: center;
+nav .logo{
+    font-family: 'Satisfy';
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+nav ul li a{
+    color: #2C2C2C;
+    text-decoration: none;
+    font-size: .8em;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav ul li a:hover{
+    color: #3a3939;
+}
+
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -6px;
+    top: -5px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #2C2C2C;
+    transition: all 0.5s;
+}
+
+/* #=== Humburger Menu Animation ===# */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: #3a3939;
+    transform: rotate(43deg) translate(-1px, -1px);    
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: #3a3939;
+    transform: rotate(-45deg) translate(-1px ,0px);    
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+/* #=== Jumbotron ===# */
+.jumbotron{
+    display: flex;
+    justify-content: center;
+}
+.jumbotron .desc{
+    /* background-color: red; */
+    width: 30%;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: -998;
+}
+.jumbotron .desc h3{
+    font-size: 30px;
+}
+.jumbotron .desc h1{
+    font-size: 45px;
+}
+.jumbotron .desc button{
+    outline: none;
+    border: none;
+    padding: 12px 50px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #2C2C2C;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #E9DBDB;
+    transition: all .3s ease;
+    position: absolute;
+    margin-top: 10px;
+}
+.jumbotron .desc button:hover{
+    background-color: #3b3b3b;
+}
+
+.jumbotron .img{
+    z-index: -15;
+}
+
+/* ###==== Responsive Breakpoin ====#### */
+/* #=== Ukuran Tablet ===# */
+@media screen and (max-width: 768px){
+    nav ul {
+        width: 50%;
     }
-    header nav{
-        /* background-color: blue; */
-        display: flex;
-        width: 95%;
-        justify-content: space-between;
+}
+
+/* #=== Ukuran Mobile ===# */
+@media screen and (max-width: 576px){
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 75%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-evenly;
         align-items: center;
+        background-color: #dacbcb;
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1s;
     }
 
-    header nav h1{
-        font-family: 'Satisfy';
-        cursor: pointer;
+    nav ul.slide{
+        transform: translateX(0);
     }
 
-    header nav ul{
-        font-family: 'Poppins', sans-serif;
-        font-weight: 400;
+    .menu-toggle{
         display: flex;
-        list-style-type: none;
-        /* background-color: aqua; */
-        width: 500px;
-        justify-content: space-around;
-        align-items: center;
     }
-    header nav ul li{
-        cursor: pointer;
-    }
-    /* Navbar End */
 
-    /* Jumbotron Start */
     .jumbotron{
-        display: flex;
-        justify-content: center;
+        display: block;
+        flex-direction: column;
     }
     .jumbotron .desc{
-        /* background-color: red; */
-        width: 30%;
-        display: flex;
-        align-items: center;
-        font-family: 'Poppins', sans-serif;
-        letter-spacing: 2px;
-        position: relative;
+        width: 70%;
+        margin-top: 50px;
+        margin-left: 20px;
     }
+
     .jumbotron .desc h3{
-        font-size: 30px;
+        font-size: 25px;
     }
     .jumbotron .desc h1{
-        font-size: 45px;
+        font-size: 35px;
     }
-    .jumbotron .desc button{
-        outline: none;
-        border: none;
-        padding: 12px 50px;
-        border-radius: 8px;
-        cursor: pointer;
-        margin-top: 5px;
-        background-color: #2C2C2C;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        color: #E9DBDB;
-        transition: all .3s ease;
-        position: absolute;
+
+    .jumbotron .img{
+        /* background-color: red; */
+        margin-top: 25px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
     }
-    .jumbotron .desc button:hover{
-        background-color: #E9DBDB;
-        color: #2C2C2C;
-        border: 2px solid #2C2C2C;
+
+    .jumbotron .img img{
+        height: 400px;
+        z-index: -997;
     }
-    /* Jumbotron End */
 }
